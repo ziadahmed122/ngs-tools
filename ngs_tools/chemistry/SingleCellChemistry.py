@@ -96,6 +96,18 @@ class SingleCellChemistry(SequencingChemistry):
 
 
 # Single cell chemistry definitions
+_HANI_ASSAY = SingleCellChemistry(
+    name='HaniAssay',
+    description="Hani's assay",
+    n=3,
+    strand=SequencingStrand.FORWARD,
+    cdna_parser=SubSequenceParser(SubSequenceDefinition(2)),
+    cell_barcode_parser=SubSequenceParser(SubSequenceDefinition(0, 9, 20), SubSequenceDefinition(1, 14, 30)),
+    umi_parser=SubSequenceParser(SubSequenceDefinition(0, 0, 8)),
+    whitelist_path=os.path.join(
+        WHITELISTS_DIR, 'HANI_WHITELIST.txt.gz'
+    ),
+)
 _10X_V1 = SingleCellChemistry(
     name='10xv1',
     description='10x Genomics 3\' version 1',
