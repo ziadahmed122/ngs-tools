@@ -102,7 +102,7 @@ _HANI_ASSAY = SingleCellChemistry(
     n=3,
     strand=SequencingStrand.FORWARD,
     cdna_parser=SubSequenceParser(SubSequenceDefinition(2)),
-    cell_barcode_parser=SubSequenceParser(SubSequenceDefinition(0, 9, 20), SubSequenceDefinition(1, 14, 30)),
+    cell_barcode_parser=SubSequenceParser(SubSequenceDefinition(0, 9, 20), SubSequenceDefinition(1, 14, 29)),
     umi_parser=SubSequenceParser(SubSequenceDefinition(0, 0, 8)),
     whitelist_path=os.path.join(
         WHITELISTS_DIR, 'HANI_WHITELIST.txt.gz'
